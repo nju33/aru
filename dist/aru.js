@@ -1972,14 +1972,12 @@ aru.set = function () {
     }, _callee, this, [[0, 6]]);
   }));
 
-  function set(_x, _x2) {
+  return function (_x, _x2) {
     return _ref.apply(this, arguments);
-  }
-
-  return set;
+  };
 }();
 
-aru.setSync = function setSync(key, value) {
+aru.setSync = function (key, value) {
   if (typeof value === 'function') {
     try {
       this.store[key] = value();
@@ -1991,7 +1989,7 @@ aru.setSync = function setSync(key, value) {
   }
 };
 
-aru.get = function get(key) {
+aru.get = function (key) {
   var value = this.store[key];
   if (typeof value === 'undefined') {
     return null;
@@ -1999,7 +1997,7 @@ aru.get = function get(key) {
   return value;
 };
 
-aru.has = function has(key) {
+aru.has = function (key) {
   var value = this.store[key];
   if (typeof value === 'undefined') {
     return false;
@@ -2007,18 +2005,18 @@ aru.has = function has(key) {
   return true;
 };
 
-aru.left = function left(key, cb) {
+aru.left = function (key, cb) {
   var value = this.store[key];
   if (typeof value === 'undefined') {
     return cb();
   }
-  return;
+  return null;
 };
 
-aru.right = function right(key, cb) {
+aru.right = function (key, cb) {
   var value = this.store[key];
   if (typeof value === 'undefined') {
-    return;
+    return null;
   }
   return cb();
 };
@@ -2035,9 +2033,8 @@ function aru() {
   if (arguments.length > 1) {
     if (index$1(arguments[1])) {
       return aru.set.apply(aru, arguments);
-    } else {
-      return aru.setSync.apply(aru, arguments);
     }
+    return aru.setSync.apply(aru, arguments);
   }
 }
 

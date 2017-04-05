@@ -56,7 +56,7 @@ test('Promise:reject', async t => {
   const left = sinon.spy();
   const right = sinon.spy();
 
-  await aru('promise:reject', Promise.reject(1));
+  await aru('promise:reject', Promise.reject(new Error(1)));
   t.false(aru.has('promise:reject'));
   t.is(aru('promise:reject'), null);
 

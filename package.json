@@ -75,7 +75,8 @@
     "prepublish": "concurrently 'yarn build' 'yarn build:prod'",
     "test": "yarn test:xo && yarn test:ava",
     "pretest:ava": "yarn build:umd",
-    "test:ava": "ava -w",
+    "test:ava": "ava",
+    "test:ava:watch": "ava",
     "test:xo": "xo {lib,tasks,test}/**/*.js task.config.js"
   },
   "xo": {

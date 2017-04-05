@@ -1,6 +1,3 @@
-import fs from 'fs';
-import pify from 'pify';
-import Case from 'case';
 import ora from 'ora';
 import meow from 'meow';
 import chokidar from 'chokidar';
@@ -10,7 +7,6 @@ import beeper from 'beeper';
 import pkg from './package';
 import {data, construction} from './tasks/injector';
 import server from './tasks/server';
-import style from './tasks/style';
 import script from './tasks/script';
 
 const pe = new PrettyError();
