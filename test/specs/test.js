@@ -12,6 +12,7 @@ test('String', t => {
   const right = sinon.spy();
 
   aru('str', 'str');
+  console.log(aru.store);
   t.true(aru.has('str'));
   t.is(aru('str'), 'str');
 
@@ -41,9 +42,9 @@ test('Promise:then', async t => {
   const left = sinon.spy();
   const right = sinon.spy();
 
-  await aru('promise:resolve', Promise.resolve(1));
+  await aru('promise:resolve', Promise.resolve(undefined));
   t.true(aru.has('promise:resolve'));
-  t.is(aru('promise:resolve'), 1);
+  t.is(aru('promise:resolve'), undefined);
 
   aru.left('promise:resolve', left);
   t.true(right.notCalled);

@@ -1947,6 +1947,7 @@ aru.store = {};
 
 aru.set = function () {
   var _ref = _asyncToGenerator(index.mark(function _callee(key, value) {
+    var value$;
     return index.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -1956,20 +1957,22 @@ aru.set = function () {
             return value;
 
           case 3:
-            this.store[key] = _context.sent;
-            _context.next = 8;
+            value$ = _context.sent;
+
+            this.store[key] = value$;
+            _context.next = 9;
             break;
 
-          case 6:
-            _context.prev = 6;
+          case 7:
+            _context.prev = 7;
             _context.t0 = _context['catch'](0);
 
-          case 8:
+          case 9:
           case 'end':
             return _context.stop();
         }
       }
-    }, _callee, this, [[0, 6]]);
+    }, _callee, this, [[0, 7]]);
   }));
 
   return function (_x, _x2) {
@@ -1980,7 +1983,8 @@ aru.set = function () {
 aru.setSync = function (key, value) {
   if (typeof value === 'function') {
     try {
-      this.store[key] = value();
+      var value$ = value();
+      this.store[key] = value$;
     } catch (err) {}
   } else {
     try {
@@ -1991,34 +1995,31 @@ aru.setSync = function (key, value) {
 
 aru.get = function (key) {
   var value = this.store[key];
-  if (typeof value === 'undefined') {
-    return null;
-  }
-  return value;
-};
-
-aru.has = function (key) {
-  var value = this.store[key];
-  if (typeof value === 'undefined') {
-    return false;
-  }
-  return true;
-};
-
-aru.left = function (key, cb) {
-  var value = this.store[key];
-  if (typeof value === 'undefined') {
-    return cb();
+  if (key in this.store) {
+    return value;
   }
   return null;
 };
 
-aru.right = function (key, cb) {
-  var value = this.store[key];
-  if (typeof value === 'undefined') {
+aru.has = function (key) {
+  if (key in this.store) {
+    return true;
+  }
+  return false;
+};
+
+aru.left = function (key, cb) {
+  if (key in this.store) {
     return null;
   }
   return cb();
+};
+
+aru.right = function (key, cb) {
+  if (key in this.store) {
+    return cb();
+  }
+  return null;
 };
 
 function aru() {
