@@ -24,7 +24,8 @@ const aru = require('aru');
 or
 
 ```html
-<script src="/path/tp/aru.js"></script>
+<script src="https://unpkg.com/aru@0.0.2/dist/aru.js"></script>
+<script src="path/tp/aru.js"></script>
 ```
 
 ### API
@@ -53,14 +54,14 @@ Wheter key exists.
 - `key`: `string`
 - `cb`: `function`
 
-If there is no value for that `key`, execute `cb`
+If there is no that `key`, execute `cb`
 
 #### `aru.right(key, cb): type-of-return-value-of-cb or null`
 
 - `key`: `string`
 - `cb`: `function`
 
-If there is value for that `key`, execute `cb`
+If there is that `key`, execute `cb`
 
 ### Example
 
