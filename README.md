@@ -24,7 +24,7 @@ const aru = require('aru');
 or
 
 ```html
-<script src="https://unpkg.com/aru@0.0.2/dist/aru.js"></script>
+<script src="https://unpkg.com/aru/dist/aru.js"></script>
 <script src="path/tp/aru.js"></script>
 ```
 
