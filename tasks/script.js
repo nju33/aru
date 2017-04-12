@@ -6,6 +6,7 @@ import {rollup} from 'rollup';
 import preset from '@nju33/rollup-preset';
 import nullpo from 'nullpo';
 import {data, construction} from './injector';
+import execa from 'execa';
 
 const cache = {
   iife: null,
@@ -30,7 +31,7 @@ const config = {
 
 class Script {
   constructor() {
-    this.process = pPipe(this.rollup, this.write);
+    this.process = pPipe(this.rollup, this.write, this.checkTypesWithFlow);
   }
 
   @data.inject('format', 'moduleName', 'banner')
@@ -89,6 +90,10 @@ class Script {
       await writeFile(output, code + `\n//# sourceMappingURL=${basename}.map`);
       await writeFile(output + '.map', map.toString());
     });
+  }
+
+  async checkTypesWithFlow() {
+    await execa('flow');
   }
 }
 
