@@ -37,7 +37,6 @@
     "chokidar": "^1.6.1",
     "concurrently": "^3.4.0",
     "flow-bin": "^0.43.1",
-    "flow-runtime": "^0.10.0",
     "lodash": "^4.17.4",
     "meow": "^3.7.0",
     "nightmare": "^2.10.0",
