@@ -1,6 +1,6 @@
 import test from 'ava';
 import sinon from 'sinon';
-import aru from '../../lib';
+import aru from '../..';
 
 test('Throw when arguments length is 0', t => {
   const err = t.throws(aru);
@@ -12,7 +12,6 @@ test('String', t => {
   const right = sinon.spy();
 
   aru('str', 'str');
-  console.log(aru.store);
   t.true(aru.has('str'));
   t.is(aru('str'), 'str');
 

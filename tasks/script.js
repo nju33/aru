@@ -5,8 +5,8 @@ import pPipe from 'p-pipe';
 import {rollup} from 'rollup';
 import preset from '@nju33/rollup-preset';
 import nullpo from 'nullpo';
-import {data, construction} from './injector';
 import execa from 'execa';
+import {data, construction} from './injector';
 
 const cache = {
   iife: null,

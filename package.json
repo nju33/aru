@@ -24,7 +24,6 @@
     "ava": "^0.18.2",
     "babel-eslint": "^7.2.1",
     "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-flow-runtime": "^0.10.0",
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -82,7 +81,7 @@
     "pretest:ava": "yarn build:umd",
     "test": "yarn test:xo && yarn test:ava",
     "test:ava": "ava",
-    "test:ava:watch": "ava",
+    "test:ava:watch": "ava -w",
     "test:xo": "xo {lib,tasks,test}/**/*.js task.config.js"
   },
   "xo": {

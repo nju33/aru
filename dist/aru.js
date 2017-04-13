@@ -11205,8 +11205,8 @@ aru.has = function (key) {
 };
 
 aru.left = function (key, cb) {
-  globalContext$1.string().asset(key);
-  globalContext$1.function(globalContext$1.return(globalContext$1.any())).asset(cb);
+  globalContext$1.string().assert(key);
+  globalContext$1.function(globalContext$1.return(globalContext$1.any())).assert(cb);
 
   if (key in this.store) {
     return null;
@@ -11215,8 +11215,8 @@ aru.left = function (key, cb) {
 };
 
 aru.right = function (key, cb) {
-  globalContext$1.string().asset(key);
-  globalContext$1.function(globalContext$1.return(globalContext$1.any())).asset(cb);
+  globalContext$1.string().assert(key);
+  globalContext$1.function(globalContext$1.return(globalContext$1.any())).assert(cb);
 
   if (key in this.store) {
     return cb();
