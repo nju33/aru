@@ -17,6 +17,4 @@
       console.log(aru('err-promise'));
       console.log(aru.has('err-promise'));
     });
-
-  console.dir(aru);
 })();

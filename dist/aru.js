@@ -2008,6 +2008,12 @@ aru.has = function (key) {
   return false;
 };
 
+aru.delete = function (key) {
+  if (key in this.store) {
+    delete this.store[key];
+  }
+};
+
 aru.left = function (key, cb) {
   if (key in this.store) {
     return null;

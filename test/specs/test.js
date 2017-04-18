@@ -20,6 +20,9 @@ test('String', t => {
 
   aru.right('str', right);
   t.true(right.calledOnce);
+
+  aru.delete('str');
+  t.false(aru.has('str'));
 });
 
 test('Function', t => {
@@ -30,7 +33,7 @@ test('Function', t => {
   t.true(aru.has('func'));
   t.is(aru('func'), 1);
 
-  aru.left('str', left);
+  aru.left('func', left);
   t.true(left.notCalled);
 
   aru.right('func', right);
